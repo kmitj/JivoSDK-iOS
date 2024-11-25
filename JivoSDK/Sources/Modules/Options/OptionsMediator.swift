@@ -8,6 +8,7 @@
 import Foundation
 import CollectionAndTableViewCompatible
 import JMCodingKit
+import UIKit
 
 final class OptionsMediator: SdkModuleMediator<OptionsStorage, OptionsCoreUpdate, OptionsViewUpdate, OptionsViewEvent, OptionsCoreRequest, OptionsJointOutput> {
     

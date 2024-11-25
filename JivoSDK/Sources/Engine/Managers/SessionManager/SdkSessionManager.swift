@@ -9,6 +9,7 @@
 import Foundation
 import JWTDecode
 import JMCodingKit
+import UIKit
 
 protocol ISdkSessionManager: ISdkManager {
     var delegate: JVSessionDelegate? { get set }

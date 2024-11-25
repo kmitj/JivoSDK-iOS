@@ -7,6 +7,7 @@ import Foundation
 import KeychainSwift
 import JMTimelineKit
 import JMCodingKit
+import UIKit
 
 struct SdkConfig {
     static let replyLengthLimit = 1000

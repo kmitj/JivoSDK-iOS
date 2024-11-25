@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 /**
  Interface to control displaying lifecycle,

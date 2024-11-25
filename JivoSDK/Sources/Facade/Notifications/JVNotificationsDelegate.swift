@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 /**
  Interface to handle notifications events,
  relates to `Jivo.notifications` namespace

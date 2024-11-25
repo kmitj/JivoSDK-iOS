@@ -8,6 +8,7 @@
 
 import Foundation
 import JMCodingKit
+import UIKit
 
 import SwiftMime
 

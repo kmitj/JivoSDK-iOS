@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import JWTDecode
+import JMCodingKit
 
 protocol ISdkSessionContext: AnyObject {
     var eventSignal: JVBroadcastTool<SdkSessionContextEvent> { get }

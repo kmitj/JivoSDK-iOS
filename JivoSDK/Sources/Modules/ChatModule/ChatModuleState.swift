@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ChatModuleInputUpdate {
     case update(SdkChatReplyControl.Update)

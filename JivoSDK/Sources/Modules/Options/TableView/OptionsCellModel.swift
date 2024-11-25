@@ -7,6 +7,7 @@
 
 import Foundation
 import CollectionAndTableViewCompatible
+import UIKit
 
 class OptionsCellModel: TableViewCompatible {
     

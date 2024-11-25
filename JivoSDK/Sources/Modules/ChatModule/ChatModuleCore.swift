@@ -7,7 +7,7 @@
 
 import Foundation
 import Photos
-
+import UIKit
 import JMTimelineKit
 import JMMarkdownKit
 import CoreData

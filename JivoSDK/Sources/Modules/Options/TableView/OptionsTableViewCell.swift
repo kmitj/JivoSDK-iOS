@@ -7,7 +7,7 @@
 
 import UIKit
 import CollectionAndTableViewCompatible
-
+import UIKit
 
 class OptionsTableViewCell: UITableViewCell, Configurable {
     

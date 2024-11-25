@@ -7,6 +7,7 @@
 
 import Foundation
 import JMCodingKit
+import UIKit
 
 enum ContextMenuOptionType {
     

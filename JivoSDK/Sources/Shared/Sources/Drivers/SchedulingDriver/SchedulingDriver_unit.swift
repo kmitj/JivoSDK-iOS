@@ -6,7 +6,7 @@
 //  Copyright © 2018 JivoSite. All rights reserved.
 //
 
-import XCTest
+//import XCTest
 
 // fileprivate let standardActionID = "action_id"
 // fileprivate let standardActionDelay = TimeInterval(2)

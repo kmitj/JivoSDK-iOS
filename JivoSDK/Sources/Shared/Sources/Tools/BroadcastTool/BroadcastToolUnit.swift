@@ -6,7 +6,7 @@
 //  Copyright © 2018 JivoSite. All rights reserved.
 //
 
-import XCTest
+//import XCTest
 
 // public final class BroadcastToolUnit: XCTestCase {
 //     public func test_whenObserverDelinked_thenObserverUnsubscribes() {

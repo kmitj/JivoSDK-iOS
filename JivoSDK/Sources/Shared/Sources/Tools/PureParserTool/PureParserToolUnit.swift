@@ -6,7 +6,7 @@
 //  Copyright © 2019 JivoSite. All rights reserved.
 //
 
-import XCTest
+//import XCTest
 
 // open class PureParserToolUnit: XCTestCase {
 //     private let tool = JVPureParserTool()

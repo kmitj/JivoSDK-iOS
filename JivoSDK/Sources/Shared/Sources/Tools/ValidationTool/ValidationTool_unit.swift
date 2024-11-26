@@ -6,7 +6,7 @@
 //  Copyright © 2018 JivoSite. All rights reserved.
 //
 
-import XCTest
+//import XCTest
 
 // class ValidationToolUnit: XCTestCase {
 //     private let tool = ValidationTool()

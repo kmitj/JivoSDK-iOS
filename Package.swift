@@ -62,7 +62,11 @@ let package = Package(
                 .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS"),
                 .product(name: "PureParser", package: "pure-parser"),
             ],
-            path: "JivoSDK/Sources"),
+            path: "JivoSDK/Sources",
+            resources: [
+                .process("Shared/Models/JVDatabase.xcdatamodeld"),
+                .process("Shared/Models/JVDatabase.momd")
+            ]),
 //        .target(name: "JivoShared",
 //                dependencies: [
 //                    "SwiftyNSException",

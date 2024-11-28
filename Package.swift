@@ -65,21 +65,7 @@ let package = Package(
             path: "JivoSDK/Sources",
             resources: [
                 .process("Shared/Models/JVDatabase.xcdatamodeld"),
-                .process("Shared/Models/JVDatabase.momd")
             ]),
-//        .target(name: "JivoShared",
-//                dependencies: [
-//                    "SwiftyNSException",
-//                    .product(name: "JFWebSocket", package: "JFWebSocket"),
-//                    .product(name: "Gzip", package: "GzipSwift"),
-//                    .product(name: "XCGLogger", package: "XCGLogger"),
-//                    .product(name: "DTCollectionViewManager", package: "DTCollectionViewManager"),
-//                    .product(name: "Reachability", package: "Reachability.swift"),
-//                    .product(name: "SwiftDate", package: "SwiftDate"),
-//                    .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS"),
-//                    .product(name: "PureParser", package: "pure-parser"),
-//                ],
-//                path: "Shared"),
         .target(name: "JFEmojiPicker", path: "JFEmojiPicker"),
         .target(name: "JMDesignKit", path: "JMDesignKit"),
         .target(name: "JMImageLoader", path: "JMImageLoader"),

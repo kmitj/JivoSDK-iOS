@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AgentEntity" representedClassName=".AgentEntity" parentEntity="ParticipantEntity" syncable="YES" codeGenerationType="category">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A348" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AgentEntity" representedClassName="JivoSDK.AgentEntity" parentEntity="ParticipantEntity" syncable="YES" codeGenerationType="category">
         <attribute name="m_avatar_link" optional="YES" attributeType="String"/>
         <attribute name="m_calling_destination" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_calling_options" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -32,7 +32,7 @@
         <relationship name="m_status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentStatusEntity" inverseName="b_agents" inverseEntity="AgentStatusEntity"/>
         <relationship name="m_worktime" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="AgentWorktimeEntity" inverseName="b_agent" inverseEntity="AgentWorktimeEntity"/>
     </entity>
-    <entity name="AgentSessionEntity" representedClassName=".AgentSessionEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="AgentSessionEntity" representedClassName="JivoSDK.AgentSessionEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_allow_mobile_calls" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="m_email" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_global_file_size_limit" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -51,14 +51,14 @@
         <relationship name="b_agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity" inverseName="m_session" inverseEntity="AgentEntity"/>
         <relationship name="m_channels" toMany="YES" deletionRule="Nullify" destinationEntity="ChannelEntity"/>
     </entity>
-    <entity name="AgentStatusEntity" representedClassName=".AgentStatusEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="AgentStatusEntity" representedClassName="JivoSDK.AgentStatusEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_emoji" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_position" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_title" optional="YES" attributeType="String" defaultValueString=""/>
         <relationship name="b_agents" toMany="YES" deletionRule="Nullify" destinationEntity="AgentEntity" inverseName="m_status" inverseEntity="AgentEntity"/>
     </entity>
-    <entity name="AgentWorktimeEntity" representedClassName=".AgentWorktimeEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="AgentWorktimeEntity" representedClassName="JivoSDK.AgentWorktimeEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_agent_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_friConfig" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_is_dirty" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -74,12 +74,12 @@
         <relationship name="b_agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity" inverseName="m_worktime" inverseEntity="AgentEntity"/>
         <relationship name="m_timezone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TimezoneEntity" inverseName="b_agent_worktimes" inverseEntity="TimezoneEntity"/>
     </entity>
-    <entity name="AiCopilotSkillEntity" representedClassName=".AiCopilotSkillEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="AiCopilotSkillEntity" representedClassName="JivoSDK.AiCopilotSkillEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_emoji" attributeType="String" defaultValueString=""/>
         <attribute name="m_id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_title" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="ArchiveEntity" representedClassName=".ArchiveEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ArchiveEntity" representedClassName="JivoSDK.ArchiveEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_archite_total" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_id" optional="YES" attributeType="String" defaultValueString=":archive:"/>
         <attribute name="m_is_cleaned_up" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -88,20 +88,20 @@
         <attribute name="m_total" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="m_hits" toMany="YES" deletionRule="Nullify" destinationEntity="ArchiveHitEntity"/>
     </entity>
-    <entity name="ArchiveHitCallItemEntity" representedClassName=".ArchiveHitCallItemEntity" parentEntity="ArchiveHitItemEntity" syncable="YES" codeGenerationType="category">
+    <entity name="ArchiveHitCallItemEntity" representedClassName="JivoSDK.ArchiveHitCallItemEntity" parentEntity="ArchiveHitItemEntity" syncable="YES" codeGenerationType="category">
         <attribute name="m_cost" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="m_cost_currency" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_status" optional="YES" attributeType="String" defaultValueString=""/>
         <relationship name="m_call" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="CallEntity"/>
     </entity>
-    <entity name="ArchiveHitChatItemEntity" representedClassName=".ArchiveHitChatItemEntity" parentEntity="ArchiveHitItemEntity" syncable="YES" codeGenerationType="category"/>
-    <entity name="ArchiveHitEntity" representedClassName=".ArchiveHitEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ArchiveHitChatItemEntity" representedClassName="JivoSDK.ArchiveHitChatItemEntity" parentEntity="ArchiveHitItemEntity" syncable="YES" codeGenerationType="category"/>
+    <entity name="ArchiveHitEntity" representedClassName="JivoSDK.ArchiveHitEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_id" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_score" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="m_sorting_rank" optional="YES" attributeType="String" defaultValueString=""/>
         <relationship name="m_item" maxCount="1" deletionRule="Cascade" destinationEntity="ArchiveHitItemEntity" inverseName="b_hit" inverseEntity="ArchiveHitItemEntity"/>
     </entity>
-    <entity name="ArchiveHitItemEntity" representedClassName=".ArchiveHitItemEntity" isAbstract="YES" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ArchiveHitItemEntity" representedClassName="JivoSDK.ArchiveHitItemEntity" isAbstract="YES" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_duration" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_events_number" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_id" optional="YES" attributeType="String" defaultValueString=""/>
@@ -112,16 +112,16 @@
         <relationship name="m_agents" toMany="YES" deletionRule="Nullify" destinationEntity="AgentEntity"/>
         <relationship name="m_chat" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="ChatEntity"/>
     </entity>
-    <entity name="BotEntity" representedClassName=".BotEntity" parentEntity="ParticipantEntity" syncable="YES" codeGenerationType="category">
+    <entity name="BotEntity" representedClassName="JivoSDK.BotEntity" parentEntity="ParticipantEntity" syncable="YES" codeGenerationType="category">
         <attribute name="m_avatar_link" optional="YES" attributeType="String"/>
         <attribute name="m_display_name" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_title" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="CallEntity" representedClassName=".CallEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="CallEntity" representedClassName="JivoSDK.CallEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="CannedPhraseEntity" representedClassName=".CannedPhraseEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="CannedPhraseEntity" representedClassName="JivoSDK.CannedPhraseEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_id" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_message" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_message_hash_id" optional="YES" attributeType="String" defaultValueString=""/>
@@ -130,7 +130,7 @@
         <attribute name="m_total_score" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_was_deleted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
     </entity>
-    <entity name="ChannelEntity" representedClassName=".ChannelEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ChannelEntity" representedClassName="JivoSDK.ChannelEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_agents_ids" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_guests_number" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -145,7 +145,7 @@
         <attribute name="m_state_id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="b_clients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ClientEntity" inverseName="m_channel" inverseEntity="ClientEntity"/>
     </entity>
-    <entity name="ChatAttendeeEntity" representedClassName=".ChatAttendeeEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ChatAttendeeEntity" representedClassName="JivoSDK.ChatAttendeeEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_comment" optional="YES" attributeType="String"/>
         <attribute name="m_notifications" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
         <attribute name="m_received_message_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -155,7 +155,7 @@
         <relationship name="m_agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity"/>
         <relationship name="m_invited_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity"/>
     </entity>
-    <entity name="ChatEntity" representedClassName=".ChatEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ChatEntity" representedClassName="JivoSDK.ChatEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_about" optional="YES" attributeType="String"/>
         <attribute name="m_department" optional="YES" attributeType="String"/>
         <attribute name="m_draft" optional="YES" attributeType="String"/>
@@ -193,13 +193,13 @@
         <relationship name="m_transfer_to_agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity"/>
         <relationship name="m_transfer_to_department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DepartmentEntity"/>
     </entity>
-    <entity name="ClientCustomFieldEntity" representedClassName=".ClientCustomFieldEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ClientCustomFieldEntity" representedClassName="JivoSDK.ClientCustomFieldEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_content" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_key" optional="YES" attributeType="String"/>
         <attribute name="m_link" optional="YES" attributeType="String"/>
         <attribute name="m_title" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="ClientEntity" representedClassName=".ClientEntity" parentEntity="ParticipantEntity" syncable="YES" codeGenerationType="category">
+    <entity name="ClientEntity" representedClassName="JivoSDK.ClientEntity" parentEntity="ParticipantEntity" syncable="YES" codeGenerationType="category">
         <attribute name="m_avatar_link" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_channel_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_channel_name" optional="YES" attributeType="String"/>
@@ -232,12 +232,12 @@
         <relationship name="m_proactive_rule" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ClientProactiveRuleEntity"/>
         <relationship name="m_task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskEntity" inverseName="m_client" inverseEntity="TaskEntity"/>
     </entity>
-    <entity name="ClientProactiveRuleEntity" representedClassName=".ClientProactiveRuleEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ClientProactiveRuleEntity" representedClassName="JivoSDK.ClientProactiveRuleEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="m_text" optional="YES" attributeType="String" defaultValueString=""/>
         <relationship name="m_agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity"/>
     </entity>
-    <entity name="ClientSessionEntity" representedClassName=".ClientSessionEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ClientSessionEntity" representedClassName="JivoSDK.ClientSessionEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_creation_ts" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="m_last_ip" optional="YES" attributeType="String" defaultValueString=""/>
         <relationship name="b_client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClientEntity" inverseName="m_active_session" inverseEntity="ClientEntity"/>
@@ -247,7 +247,7 @@
         <relationship name="m_start_page" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PageEntity"/>
         <relationship name="m_utm" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ClientSessionUtmEntity" inverseName="b_client_session" inverseEntity="ClientSessionUtmEntity"/>
     </entity>
-    <entity name="ClientSessionGeoEntity" representedClassName=".ClientSessionGeoEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ClientSessionGeoEntity" representedClassName="JivoSDK.ClientSessionGeoEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_city" optional="YES" attributeType="String"/>
         <attribute name="m_country" optional="YES" attributeType="String"/>
         <attribute name="m_country_code" optional="YES" attributeType="String"/>
@@ -255,7 +255,7 @@
         <attribute name="m_region" optional="YES" attributeType="String"/>
         <relationship name="b_session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClientSessionEntity" inverseName="m_geo" inverseEntity="ClientSessionEntity"/>
     </entity>
-    <entity name="ClientSessionUtmEntity" representedClassName=".ClientSessionUtmEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ClientSessionUtmEntity" representedClassName="JivoSDK.ClientSessionUtmEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_campaign" optional="YES" attributeType="String"/>
         <attribute name="m_content" optional="YES" attributeType="String"/>
         <attribute name="m_keyword" optional="YES" attributeType="String"/>
@@ -264,7 +264,7 @@
         <relationship name="b_client_session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClientSessionEntity" inverseName="m_utm" inverseEntity="ClientSessionEntity"/>
         <relationship name="b_guest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GuestEntity" inverseName="m_utm" inverseEntity="GuestEntity"/>
     </entity>
-    <entity name="DepartmentEntity" representedClassName=".DepartmentEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="DepartmentEntity" representedClassName="JivoSDK.DepartmentEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_agents_ids" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_brief" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_channels_ids" optional="YES" attributeType="String" defaultValueString=""/>
@@ -272,16 +272,16 @@
         <attribute name="m_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_name" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="Entity" representedClassName=".DatabaseEntity" isAbstract="YES" syncable="YES">
+    <entity name="Entity" representedClassName="JivoSDK.DatabaseEntity" isAbstract="YES" syncable="YES">
         <attribute name="m_pk_num" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_pk_str" optional="YES" attributeType="String"/>
         <attribute name="m_uid" attributeType="String"/>
     </entity>
-    <entity name="EulaEntity" representedClassName=".EulaEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="EulaEntity" representedClassName="JivoSDK.EulaEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_agent_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_module" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="GuestEntity" representedClassName=".GuestEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="GuestEntity" representedClassName="JivoSDK.GuestEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_agent_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_channel_id" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_city_name" optional="YES" attributeType="String" defaultValueString=""/>
@@ -312,14 +312,14 @@
         <relationship name="m_proactive_agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity"/>
         <relationship name="m_utm" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ClientSessionUtmEntity" inverseName="b_guest" inverseEntity="ClientSessionUtmEntity"/>
     </entity>
-    <entity name="MediaUploadEntity" representedClassName=".MediaUploadEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="MediaUploadEntity" representedClassName="JivoSDK.MediaUploadEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_chat_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_file_path" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_id" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_recipient_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_recipient_type" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="MessageBodyEntity" representedClassName=".MessageBodyEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="MessageBodyEntity" representedClassName="JivoSDK.MessageBodyEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_buttons" optional="YES" attributeType="String"/>
         <attribute name="m_call_id" optional="YES" attributeType="String"/>
         <attribute name="m_created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -345,7 +345,7 @@
         <relationship name="m_agent" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="AgentEntity"/>
         <relationship name="m_department" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="DepartmentEntity"/>
     </entity>
-    <entity name="MessageEntity" representedClassName=".MessageEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="MessageEntity" representedClassName="JivoSDK.MessageEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_can_be_sent" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="m_chat_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_client_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -385,12 +385,12 @@
         <relationship name="m_sender_client" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="ClientEntity"/>
         <relationship name="m_updated_agent" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="AgentEntity"/>
     </entity>
-    <entity name="MessageImageEntity" representedClassName=".MessageImageEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="MessageImageEntity" representedClassName="JivoSDK.MessageImageEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_file_name" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_upload_ts" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="m_url" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="MessageMediaEntity" representedClassName=".MessageMediaEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="MessageMediaEntity" representedClassName="JivoSDK.MessageMediaEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_duration" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_emoji" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_full_link" optional="YES" attributeType="String" defaultValueString=""/>
@@ -409,23 +409,23 @@
         <attribute name="m_width" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="b_message" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MessageEntity" inverseName="m_media" inverseEntity="MessageEntity"/>
     </entity>
-    <entity name="MessageSnippetEntity" representedClassName=".MessageSnippetEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="MessageSnippetEntity" representedClassName="JivoSDK.MessageSnippetEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_html" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_icon_url" optional="YES" attributeType="String"/>
         <attribute name="m_title" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_url" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="MessageTransferEntity" representedClassName=".MessageTransferEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="MessageTransferEntity" representedClassName="JivoSDK.MessageTransferEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_agent_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_comment" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="PageEntity" representedClassName=".PageEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="PageEntity" representedClassName="JivoSDK.PageEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_time" optional="YES" attributeType="String"/>
         <attribute name="m_title" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_url" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="ParticipantEntity" representedClassName=".ParticipantEntity" isAbstract="YES" parentEntity="Entity" syncable="YES" codeGenerationType="category"/>
-    <entity name="PushCredentialsEntity" representedClassName=".PushCredentialsEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="ParticipantEntity" representedClassName="JivoSDK.ParticipantEntity" isAbstract="YES" parentEntity="Entity" syncable="YES" codeGenerationType="category"/>
+    <entity name="PushCredentialsEntity" representedClassName="JivoSDK.PushCredentialsEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_channel_id" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_client_id" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_date" attributeType="Date" defaultDateTimeInterval="697185660" usesScalarValueType="NO"/>
@@ -436,14 +436,14 @@
         <attribute name="m_site_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_status" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="QuickPhraseEntity" representedClassName=".QuickPhraseEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="QuickPhraseEntity" representedClassName="JivoSDK.QuickPhraseEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_id" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_is_standard" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="m_lang" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_tags" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="m_text" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
-    <entity name="TaskEntity" representedClassName=".TaskEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="TaskEntity" representedClassName="JivoSDK.TaskEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_client_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_created_timestamp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="m_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -455,7 +455,7 @@
         <relationship name="m_agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity" inverseName="b_tasks" inverseEntity="AgentEntity"/>
         <relationship name="m_client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClientEntity" inverseName="m_task" inverseEntity="ClientEntity"/>
     </entity>
-    <entity name="TimezoneEntity" representedClassName=".TimezoneEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="TimezoneEntity" representedClassName="JivoSDK.TimezoneEntity" parentEntity="Entity" syncable="YES">
         <attribute name="m_display_gmt" optional="YES" attributeType="String"/>
         <attribute name="m_display_name_en" optional="YES" attributeType="String"/>
         <attribute name="m_display_name_ru" optional="YES" attributeType="String"/>
@@ -466,13 +466,13 @@
         <attribute name="m_sorting_region_ru" optional="YES" attributeType="String"/>
         <relationship name="b_agent_worktimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AgentWorktimeEntity" inverseName="m_timezone" inverseEntity="AgentWorktimeEntity"/>
     </entity>
-    <entity name="TopicEntity" representedClassName=".TopicEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="TopicEntity" representedClassName="JivoSDK.TopicEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="m_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="m_title" optional="YES" attributeType="String"/>
         <relationship name="m_parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TopicEntity"/>
     </entity>
-    <entity name="WaTemplateEntity" representedClassName=".WaTemplateEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
+    <entity name="WaTemplateEntity" representedClassName="JivoSDK.WaTemplateEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_category" optional="YES" attributeType="String"/>
         <attribute name="m_components" optional="YES" attributeType="String"/>
         <attribute name="m_id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>

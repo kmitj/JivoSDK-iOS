@@ -63,7 +63,7 @@ final class JVDispatchThread: NSObject, JVIDispatchThread {
         thread?.cancel()
     }
     
-    func addOperation(_ block: @escaping () -> Void) {
+    func addOperationNew(_ block: @escaping () -> Void) {
         async(block: block)
     }
     

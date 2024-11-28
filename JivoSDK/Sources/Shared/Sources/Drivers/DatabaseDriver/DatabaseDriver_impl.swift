@@ -47,7 +47,7 @@ class JVDatabaseDriver: JVIDatabaseDriver {
         self.localizer = localizer
         
         let momName = "JVDatabase"
-        guard let momURL = Bundle(for: DatabaseEntity.self).url(forResource: momName, withExtension: "momd"),
+        guard let momURL = Bundle.module.url(forResource: momName, withExtension: "momd"),
               let momContent = NSManagedObjectModel(contentsOf: momURL)
         else {
             fatalError()

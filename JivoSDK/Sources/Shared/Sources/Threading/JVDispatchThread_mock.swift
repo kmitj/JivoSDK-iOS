@@ -19,7 +19,7 @@ open class JVDispatchThreadMock: JVIDispatchThread {
         fatalError()
     }
     
-    public func addOperation(_ block: @escaping () -> Void) {
+    public func addOperationNew(_ block: @escaping () -> Void) {
         fatalError()
     }
     

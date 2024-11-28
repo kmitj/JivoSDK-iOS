@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 protocol JVIDispatcher: AnyObject {
-    func addOperation(_ block: @Sendable @escaping () -> Void)
+    func addOperationNew(_ block: @escaping @Sendable () -> Void)
 }
 
 extension OperationQueue: JVIDispatcher {
-    func addOperation(_ block: @Sendable @escaping () -> Void) {
-        
+    func addOperationNew(_ block: @escaping @Sendable () -> Void) {
+        self.addOperation(block)
     }
 }

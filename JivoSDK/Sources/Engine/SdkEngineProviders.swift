@@ -33,7 +33,7 @@ struct SdkEngineProvidersFactory {
     
     private func buildUUIDProvider() -> IUUIDProvider {
         return UUIDProvider(
-            bundle: Bundle(for: Jivo.self),
+            bundle: Bundle.module,
             package: .sdk,
             keychainDriver: drivers.keychainDriver,
             installationIDPreference: drivers.preferencesDriver.retrieveAccessor(forToken: .installationID))
@@ -41,7 +41,7 @@ struct SdkEngineProvidersFactory {
     
     private func buildLocaleProvider() -> JVILocaleProvider {
         return JVLocaleProvider(
-            containingBundle: Bundle(for: Jivo.self),
+            containingBundle: Bundle.module,
             activeLocale: (
                 JVLocaleProvider.activeLocale == nil
                     ? Locale.current

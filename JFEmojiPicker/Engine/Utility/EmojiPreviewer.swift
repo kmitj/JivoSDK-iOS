@@ -38,7 +38,7 @@ final class EmojiPreviewer: UIView {
     var completion: ((String) -> Void)?
     
     static let shared: EmojiPreviewer = {
-        let nib = UINib(nibName: "EmojiPreviewer", bundle: Bundle(for: EmojiPreviewer.self))
+        let nib = UINib(nibName: "EmojiPreviewer", bundle: Bundle.module)
         let view = nib.instantiate(withOwner: nil, options: nil)[0] as! EmojiPreviewer
         view.backgroundColor = .clear
         view.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
@@ -117,7 +117,7 @@ extension EmojiPreviewer {
 
 extension EmojiPreviewer {
     private func setupView(for emoji: String, sourceRect: CGRect, emojiFontSize: CGFloat, isDarkMode: Bool) {
-        let image = UIImage(named: isDarkMode ? "darkEmojiTag" : "lightEmojiTag", in: Bundle(for: EmojiPreviewer.self), compatibleWith: nil)!
+        let image = UIImage(named: isDarkMode ? "darkEmojiTag" : "lightEmojiTag", in: Bundle.module, compatibleWith: nil)!
         singleEmojiImageView.image = image
         singleEmojiLabel.text = emoji
         singleEmojiLabel.font = UIFont.systemFont(ofSize: emojiFontSize)
@@ -150,13 +150,13 @@ extension EmojiPreviewer {
         multipleEmojisDarkButton.setTitle(emoji.emojis[4], for: .normal, animated: false)
         multipleEmojisBlackButton.setTitle(emoji.emojis[5], for: .normal, animated: false)
         
-        multipleEmojisAnchorImageView.image = UIImage(named: isDarkMode ? "anchorDarkEmojiTag" : "anchorLightEmojiTag", in: Bundle(for: EmojiPreviewer.self), compatibleWith: nil)
-        multipleEmojisLeftImageView.image = UIImage(named: isDarkMode ? "leftDarkEmojiTag" : "leftLightEmojiTag", in: Bundle(for: EmojiPreviewer.self), compatibleWith: nil)
-        multipleEmojisRightImageView.image = UIImage(named: isDarkMode ? "rightDarkEmojiTag" : "rightLightEmojiTag", in: Bundle(for: EmojiPreviewer.self), compatibleWith: nil)
-        multipleEmojisCenterLeftImageView.image = UIImage(named: isDarkMode ? "centerDarkEmojiTag" : "centerLightEmojiTag", in: Bundle(for: EmojiPreviewer.self), compatibleWith: nil)
+        multipleEmojisAnchorImageView.image = UIImage(named: isDarkMode ? "anchorDarkEmojiTag" : "anchorLightEmojiTag", in: Bundle.module, compatibleWith: nil)
+        multipleEmojisLeftImageView.image = UIImage(named: isDarkMode ? "leftDarkEmojiTag" : "leftLightEmojiTag", in: Bundle.module, compatibleWith: nil)
+        multipleEmojisRightImageView.image = UIImage(named: isDarkMode ? "rightDarkEmojiTag" : "rightLightEmojiTag", in: Bundle.module, compatibleWith: nil)
+        multipleEmojisCenterLeftImageView.image = UIImage(named: isDarkMode ? "centerDarkEmojiTag" : "centerLightEmojiTag", in: Bundle.module, compatibleWith: nil)
         multipleEmojisCenterRightImageView.image = multipleEmojisCenterLeftImageView.image
         
-        let image = UIImage(named: isDarkMode ? "darkEmojiTag" : "lightEmojiTag", in: Bundle(for: EmojiPreviewer.self), compatibleWith: nil)!
+        let image = UIImage(named: isDarkMode ? "darkEmojiTag" : "lightEmojiTag", in: Bundle.module, compatibleWith: nil)!
         let width = Constant.EmojiCollectionViewCell.size.width + 37
         frame.size.height = width * image.size.height / image.size.width
         multipleEmojisWrapperView.layoutIfNeeded()

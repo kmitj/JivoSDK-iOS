@@ -10,7 +10,7 @@ import UIKit
 
 extension Bundle {
     static var jv_shared: Bundle {
-        return Bundle(for: JVDesign.self)
+        return Bundle.module
     }
 }
 

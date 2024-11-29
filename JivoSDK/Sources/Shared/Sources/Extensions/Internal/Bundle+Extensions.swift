@@ -15,10 +15,10 @@ extension Bundle {
     
     static var jivoSdk: Bundle {
         if let sdkClass = objc_lookUpClass("Jivo") {
-            return Bundle(for: sdkClass)
+            return Bundle.module
         }
         else {
-            return .main
+            return .module
         }
     }
     

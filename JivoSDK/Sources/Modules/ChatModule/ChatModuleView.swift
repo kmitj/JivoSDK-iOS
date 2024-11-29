@@ -141,7 +141,7 @@ final class JVChatModuleViewController
     
     private func makeInfoLabel() -> UIView {
         let label = UILabel()
-        label.text = "ver " + Bundle(for: Jivo.self).jv_formatVersion(.marketingShort)
+        label.text = "ver " + Bundle.module.jv_formatVersion(.marketingShort)
         label.textColor = JVDesign.colors.resolve(usage: .unnoticeableForeground)
         label.font = JVDesign.fonts.resolve(.semibold(12), scaling: .caption2)
         label.isUserInteractionEnabled = true
@@ -344,7 +344,7 @@ final class JVChatModuleViewController
         placeholderView.placeholderItems = [
             .init(
                 content: .icon(
-                    under: UIImage(named: "chat_unavailable_placeholder", in: Bundle(for: JVDesign.self), compatibleWith: nil),
+                    under: UIImage(named: "chat_unavailable_placeholder", in: Bundle.module, compatibleWith: nil),
                     over: nil
                 ),
                 gap: .auto

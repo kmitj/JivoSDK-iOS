@@ -30,7 +30,7 @@ struct ErrorRendererConfiguration {
 extension ErrorRendererConfiguration {
     static var forObsoleteImageLink: Self {
         return Self(
-            image: UIImage(named: "unavailable_image_stub", in: Bundle(for: JVDesign.self), compatibleWith: nil),
+            image: UIImage(named: "unavailable_image_stub", in: Bundle.module, compatibleWith: nil),
             errorDescriptionProvider: { error in
                 switch error {
                 case .notFound:
@@ -49,7 +49,7 @@ extension ErrorRendererConfiguration {
     
     static var forUnavailableImage: Self {
         return Self(
-            image: UIImage(named: "broken_image", in: Bundle(for: JVDesign.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate),
+            image: UIImage(named: "broken_image", in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate),
             errorDescriptionProvider: { error in
                 switch error {
                 default: return loc["Message.Instagram.NotAvailable"]

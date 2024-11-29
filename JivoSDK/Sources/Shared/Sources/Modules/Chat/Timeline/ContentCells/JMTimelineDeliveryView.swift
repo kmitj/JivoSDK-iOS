@@ -30,15 +30,15 @@ final class JMTimelineDeliveryView: UIView {
         case .hidden:
             statusImage.image = nil
         case .queued:
-            statusImage.image = UIImage(named: "message_queued", in: Bundle(for: JVDesign.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+            statusImage.image = UIImage(named: "message_queued", in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         case .sent:
-            statusImage.image = UIImage(named: "message_sent", in: Bundle(for: JVDesign.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+            statusImage.image = UIImage(named: "message_sent", in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         case .delivered:
-            statusImage.image = UIImage(named: "message_sent", in: Bundle(for: JVDesign.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+            statusImage.image = UIImage(named: "message_sent", in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         case .seen:
-            statusImage.image = UIImage(named: "message_seen", in: Bundle(for: JVDesign.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+            statusImage.image = UIImage(named: "message_seen", in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         case .failed:
-            statusImage.image = UIImage(named: "message_failed", in: Bundle(for: JVDesign.self), compatibleWith: nil)
+            statusImage.image = UIImage(named: "message_failed", in: Bundle.module, compatibleWith: nil)
         }
         
         if icons.count == channelsImages.count {

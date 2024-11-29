@@ -26,7 +26,7 @@ final class ChatReplyAttachmentControl: UIView {
         
         dismissButton.backgroundColor = JVDesign.colors.resolve(usage: .destructiveBrightButtonBackground)
         dismissButton.imageView?.tintColor = JVDesign.colors.resolve(usage: .destructiveButtonForeground)
-        dismissButton.setImage(UIImage(named: "close", in: Bundle(for: SdkChatReplyControl.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        dismissButton.setImage(UIImage(named: "close", in: Bundle.module, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate), for: .normal)
         dismissButton.addTarget(self, action: #selector(handleDismissTap), for: .touchUpInside)
         addSubview(dismissButton)
         

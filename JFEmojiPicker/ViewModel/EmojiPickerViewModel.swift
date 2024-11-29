@@ -32,11 +32,11 @@ final class EmojiPickerViewModel {
         let systemVersion = UIDevice.current.systemVersion
         let path: String
         if systemVersion.compare("10", options: .numeric) == .orderedAscending {
-            path = Bundle(for: EmojiPickerViewModel.self).path(forResource: "emojis9.1", ofType: "json")!
+            path = Bundle.module.path(forResource: "emojis9.1", ofType: "json")!
         } else if systemVersion.compare("12", options: .numeric) == .orderedAscending {
-            path = Bundle(for: EmojiPickerViewModel.self).path(forResource: "emojis11.0.1", ofType: "json")!
+            path = Bundle.module.path(forResource: "emojis11.0.1", ofType: "json")!
         } else {
-            path = Bundle(for: EmojiPickerViewModel.self).path(forResource: "emojis", ofType: "json")!
+            path = Bundle.module.path(forResource: "emojis", ofType: "json")!
         }
         let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
         let categories = try! JSONDecoder().decode([Category].self, from: data)

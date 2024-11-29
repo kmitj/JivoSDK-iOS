@@ -44,7 +44,7 @@ final class JMTimelineMessageMediaRegion: JMTimelineMessageCanvasRegion {
                 formatter.zeroFormattingBehavior = .pad
                 
                 mediaBlock.configure(
-                    icon: UIImage(named: "media_video", in: Bundle(for: JVDesign.self), compatibleWith: nil),
+                    icon: UIImage(named: "media_video", in: Bundle.module, compatibleWith: nil),
                     url: object.URL,
                     title: object.title,
                     subtitle: object.duration.flatMap(formatter.string),
@@ -59,7 +59,7 @@ final class JMTimelineMessageMediaRegion: JMTimelineMessageCanvasRegion {
                 formatter.allowsNonnumericFormatting = false
                 
                 mediaBlock.configure(
-                    icon: UIImage(named: "media_document", in: Bundle(for: JVDesign.self), compatibleWith: nil),
+                    icon: UIImage(named: "media_document", in: Bundle.module, compatibleWith: nil),
                     url: object.URL,
                     title: object.title,
                     subtitle: object.dataSize.flatMap(formatter.string),
@@ -69,7 +69,7 @@ final class JMTimelineMessageMediaRegion: JMTimelineMessageCanvasRegion {
                 
             case let object as JMTimelineMediaContactInfo:
                 mediaBlock.configure(
-                    icon: UIImage(named: "media_contact", in: Bundle(for: JVDesign.self), compatibleWith: nil),
+                    icon: UIImage(named: "media_contact", in: Bundle.module, compatibleWith: nil),
                     url: nil,
                     title: object.name,
                     subtitle: object.phone,

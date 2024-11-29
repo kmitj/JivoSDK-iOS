@@ -86,7 +86,7 @@ final class SdkEngine: ISdkEngine {
                     namespace: "jivosdk:"
                 ),
                 JVLocalizerSearchingRule(
-                    location: Bundle(for: Jivo.self).path(forResource: lang, ofType: "lproj"),
+                    location: Bundle.module.path(forResource: lang, ofType: "lproj"),
                     namespace: .jv_empty
                 ),
                 JVLocalizerSearchingRule(
@@ -94,7 +94,7 @@ final class SdkEngine: ISdkEngine {
                     namespace: "jivosdk:"
                 ),
                 JVLocalizerSearchingRule(
-                    location: Bundle(for: Jivo.self).path(forResource: "Base", ofType: "lproj"),
+                    location: Bundle.module.path(forResource: "Base", ofType: "lproj"),
                     namespace: .jv_empty
                 ),
             ]

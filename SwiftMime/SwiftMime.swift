@@ -32,7 +32,7 @@ public class SwiftMime {
 
     func loadTypesFile(_ filePath: String) {
         do {
-            let path = Bundle(for: type(of: self)).path(forResource: filePath, ofType: "json") ?? ""
+            let path = Bundle.module.path(forResource: filePath, ofType: "json") ?? ""
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let object = json as? [String: [String]] {

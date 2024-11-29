@@ -98,7 +98,7 @@ final class JVDesignFonts: JVDesignEnvironmental, JVIDesignFonts {
     
     private func ensureFontLoaded(fontName: String, fileName: String) {
         guard UIFont.fontNames(forFamilyName: fontName).isEmpty,
-              let url = Bundle(for: JVDesign.self).url(forResource: fileName, withExtension: "ttf"),
+              let url = Bundle.module.url(forResource: fileName, withExtension: "ttf"),
               let data = try? Data(contentsOf: url),
               let provider = CGDataProvider(data: data as CFData),
               let font = CGFont(provider)

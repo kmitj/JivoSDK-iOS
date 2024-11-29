@@ -2023,17 +2023,17 @@ final class ChatTimelineFactory: JMTimelineFactory {
         let stateIcon: UIImage?
         switch call.type {
         case .outgoing where call.isFailed:
-            stateIcon = UIImage(named: "call_out_fail", in: Bundle(for: JVDesign.self), compatibleWith: nil)
+            stateIcon = UIImage(named: "call_out_fail", in: Bundle.module, compatibleWith: nil)
         case .outgoing:
-            stateIcon = UIImage(named: "call_out", in: Bundle(for: JVDesign.self), compatibleWith: nil)
+            stateIcon = UIImage(named: "call_out", in: Bundle.module, compatibleWith: nil)
         case .callback where call.isFailed:
-            stateIcon = UIImage(named: "call_out_fail", in: Bundle(for: JVDesign.self), compatibleWith: nil)
+            stateIcon = UIImage(named: "call_out_fail", in: Bundle.module, compatibleWith: nil)
         case .callback:
-            stateIcon = UIImage(named: "call_out", in: Bundle(for: JVDesign.self), compatibleWith: nil)
+            stateIcon = UIImage(named: "call_out", in: Bundle.module, compatibleWith: nil)
         case .incoming where call.isFailed:
-            stateIcon = UIImage(named: "call_in_fail", in: Bundle(for: JVDesign.self), compatibleWith: nil)
+            stateIcon = UIImage(named: "call_in_fail", in: Bundle.module, compatibleWith: nil)
         default:
-            stateIcon = UIImage(named: "call_in", in: Bundle(for: JVDesign.self), compatibleWith: nil)
+            stateIcon = UIImage(named: "call_in", in: Bundle.module, compatibleWith: nil)
         }
         
         let stateTitle: String
@@ -3057,7 +3057,7 @@ final class ChatTimelineFactory: JMTimelineFactory {
             },
             actions: (reactions.isEmpty
                       ? []
-                      : [JMTimelineActionMeta(ID: String(), icon: UIImage(named: "add_emoji", in: Bundle(for: JVDesign.self), compatibleWith: nil) ?? UIImage())]
+                      : [JMTimelineActionMeta(ID: String(), icon: UIImage(named: "add_emoji", in: Bundle.module, compatibleWith: nil) ?? UIImage())]
                      )
         )
     }

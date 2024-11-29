@@ -39,7 +39,7 @@ final class JVLocalizer {
     static let shared = JVLocalizer()
     
     var searchingRulesProvider: (_ lang: String) -> [JVLocalizerSearchingRule<String?>] = { _ in
-        return [JVLocalizerSearchingRule(location: Bundle.main.bundlePath, namespace: .jv_empty)]
+        return [JVLocalizerSearchingRule(location: Bundle.module.bundlePath, namespace: .jv_empty)]
     }
     
     private let regexpStrToObj: NSRegularExpression? = {

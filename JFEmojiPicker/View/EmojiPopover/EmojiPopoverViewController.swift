@@ -126,7 +126,7 @@ extension EmojiPopoverViewController: UICollectionViewDataSource {
         cell.delegate = self
         cell.isDarkMode = isDarkMode
         if let group = EmojiGroup(index: indexPath.item) {
-            cell.image = UIImage(named: group.rawValue, in: Bundle(for: GroupCollectionViewCell.self), compatibleWith: nil)
+            cell.image = UIImage(named: group.rawValue, in: Bundle.module, compatibleWith: nil)
         }
         if selectedGroupCell == nil {
             selectedGroupCell = cell
@@ -238,16 +238,16 @@ extension EmojiPopoverViewController {
         groupsCollectionView.delegate = self
         groupsCollectionView.dataSource = self
         
-        var nib = UINib(nibName: Constant.EmojiCollectionViewCell.identifier, bundle: Bundle(for: EmojiCollectionViewCell.self))
+        var nib = UINib(nibName: Constant.EmojiCollectionViewCell.identifier, bundle: Bundle.module)
         emojisCollectionView.register(nib, forCellWithReuseIdentifier: Constant.EmojiCollectionViewCell.identifier)
-        nib = UINib(nibName: Constant.EmojiHeaderView.identifier, bundle: Bundle(for: EmojiHeaderView.self))
+        nib = UINib(nibName: Constant.EmojiHeaderView.identifier, bundle: Bundle.module)
         emojisCollectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Constant.EmojiHeaderView.identifier)
         var layout = emojisCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.headerReferenceSize = CGSize(width: emojisCollectionView.frame.width, height: Constant.EmojiHeaderView.height)
         
-        nib = UINib(nibName: Constant.GroupCollectionViewCell.identifier, bundle: Bundle(for: GroupCollectionViewCell.self))
+        nib = UINib(nibName: Constant.GroupCollectionViewCell.identifier, bundle: Bundle.module)
         groupsCollectionView.register(nib, forCellWithReuseIdentifier: Constant.GroupCollectionViewCell.identifier)
-        nib = UINib(nibName: Constant.GroupHeaderView.identifier, bundle: Bundle(for: GroupHeaderView.self))
+        nib = UINib(nibName: Constant.GroupHeaderView.identifier, bundle: Bundle.module)
         groupsCollectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Constant.GroupHeaderView.identifier)
         layout = groupsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.headerReferenceSize = CGSize(width: 0, height: 0)

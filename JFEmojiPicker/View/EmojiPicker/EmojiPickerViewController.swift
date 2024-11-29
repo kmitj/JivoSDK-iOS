@@ -29,7 +29,7 @@ open class EmojiPickerViewController: UIViewController {
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let storyboard = UIStoryboard(name: "EmojiPopover", bundle: Bundle(for: EmojiPopoverViewController.self))
+        let storyboard = UIStoryboard(name: "EmojiPopover", bundle: Bundle.module)
         emojiPopoverVC = storyboard.instantiateInitialViewController() as? EmojiPopoverViewController
         emojiPopoverVC.delegate = self
         emojiPopoverVC.sourceView = view

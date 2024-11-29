@@ -11,7 +11,7 @@ import Foundation
 extension String {
     var localized: String {
         let language = UserDefaults.standard.string(forKey: Constant.CurrentLanguage.currentLanguageKey)
-        var bundle = Bundle(for: EmojiPicker.self)
+        var bundle = Bundle.module
         if Constant.CurrentLanguage.language != language {
             if let path = bundle.path(forResource: language, ofType: "lproj") {
                 bundle = Bundle(path: path)!
@@ -28,7 +28,7 @@ extension String {
 extension Constant {
     struct CurrentLanguage {
         static var language: String? = nil
-        static var bundle = Bundle(for: EmojiPicker.self)
+        static var bundle = Bundle.module
         static let currentLanguageKey = "com.levantAJ.EmojiPicker.currentLanguage"
     }
 }

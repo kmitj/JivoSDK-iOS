@@ -10,7 +10,7 @@ import UIKit
 
 open class EmojiPicker {
     public class var viewController: EmojiPickerViewController {
-        let storyboard = UIStoryboard(name: "EmojiPicker", bundle: Bundle(for: EmojiPickerViewController.self))
+        let storyboard = UIStoryboard(name: "EmojiPicker", bundle: Bundle.module)
         let viewController = storyboard.instantiateInitialViewController() as! EmojiPickerViewController
         viewController.modalPresentationStyle = .overCurrentContext
         return viewController

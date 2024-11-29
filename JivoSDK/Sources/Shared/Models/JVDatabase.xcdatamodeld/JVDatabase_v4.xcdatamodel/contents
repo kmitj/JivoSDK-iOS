@@ -455,7 +455,7 @@
         <relationship name="m_agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AgentEntity" inverseName="b_tasks" inverseEntity="AgentEntity"/>
         <relationship name="m_client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClientEntity" inverseName="m_task" inverseEntity="ClientEntity"/>
     </entity>
-    <entity name="TimezoneEntity" representedClassName="JivoSDK.TimezoneEntity" parentEntity="Entity" syncable="YES">
+    <entity name="TimezoneEntity" representedClassName="JivoSDK.TimezoneEntity" parentEntity="Entity" syncable="YES" codeGenerationType="category">
         <attribute name="m_display_gmt" optional="YES" attributeType="String"/>
         <attribute name="m_display_name_en" optional="YES" attributeType="String"/>
         <attribute name="m_display_name_ru" optional="YES" attributeType="String"/>
